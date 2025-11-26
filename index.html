@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Bros - Stage 1-1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui">
+            <div class="ui-row">
+                <div class="ui-item">
+                    <div class="ui-label">MARIO</div>
+                    <div id="score" class="ui-value">000000</div>
+                </div>
+                <div class="ui-item">
+                    <div class="ui-label">COINS</div>
+                    <div id="coins" class="ui-value">×00</div>
+                </div>
+                <div class="ui-item">
+                    <div class="ui-label">WORLD</div>
+                    <div id="world" class="ui-value">1-1</div>
+                </div>
+                <div class="ui-item">
+                    <div class="ui-label">LIVES</div>
+                    <div id="lives" class="ui-value">×3</div>
+                </div>
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="start-screen">
+            <h1>SUPER MARIO BROS</h1>
+            <div class="stage-select">
+                <button id="stage1-btn" class="stage-btn">START GAME</button>
+            </div>
+            <div class="controls">
+                <p>← → : 移動</p>
+                <p>SPACE : ジャンプ</p>
+                <p>SHIFT : ダッシュ</p>
+            </div>
+        </div>
+        <div id="game-over-screen" style="display: none;">
+            <h1>GAME OVER</h1>
+            <p>PRESS SPACE TO RESTART</p>
+        </div>
+        <div id="stage-transition" style="display: none;">
+            <h1>STAGE CLEAR!</h1>
+            <p>NEXT STAGE...</p>
+        </div>
+        <div id="clear-screen" style="display: none;">
+            <h1>ALL STAGES CLEAR!</h1>
+            <p id="final-score"></p>
+            <p>PRESS SPACE TO RESTART</p>
+        </div>
+    </div>
+
+    <script type="module" src="js/game.js"></script>
+</body>
+</html>

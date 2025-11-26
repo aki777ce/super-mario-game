@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background-color: #5c94fc;
+}
+
+#ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 100;
+    font-size: 12px;
+}
+
+.ui-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ui-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ui-label {
+    color: #fff;
+    font-size: 10px;
+}
+
+.ui-value {
+    color: #fff;
+    font-size: 12px;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#start-screen,
+#game-over-screen,
+#clear-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+#start-screen h1,
+#game-over-screen h1,
+#clear-screen h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffaa00;
+    text-shadow: 2px 2px 0 #000;
+}
+
+#start-screen p,
+#game-over-screen p,
+#clear-screen p {
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.stage-select {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.stage-btn {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 14px;
+    padding: 15px 30px;
+    background-color: #ffaa00;
+    color: #000;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.stage-btn:hover {
+    background-color: #ffdd00;
+    transform: scale(1.05);
+}
+
+.stage-btn:active {
+    transform: scale(0.95);
+}
+
+.controls {
+    margin-top: 30px;
+    font-size: 10px;
+    color: #aaa;
+}
+
+.controls p {
+    margin: 5px 0;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+#start-screen p:first-of-type,
+#game-over-screen p:first-of-type,
+#clear-screen p:last-of-type {
+    animation: blink 1s infinite;
+}
